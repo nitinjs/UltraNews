@@ -1,0 +1,242 @@
+﻿<UserControl x:Class="Nitin.News.Controls.HomeUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Nitin.News.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Height="120" Background="WhiteSmoke" Orientation="Vertical">
+            <Image Source="../Resources/Images/cooltext819042054.png" Width="300"></Image>
+            <TextBlock FontSize="13" TextAlignment="Center">Geo-location enabled news reader application</TextBlock>
+            <Separator></Separator>
+            <DockPanel>
+                <Label DockPanel.Dock="Left" FontWeight="SemiBold" FontSize="15" HorizontalAlignment="Left">Location:
+                </Label>
+                <Label Name="lblLocation" DockPanel.Dock="Left" FontSize="15" HorizontalAlignment="Left">Mumbai, INDIA
+                </Label>
+                <Button Name="btnSettings" Padding="3" Margin="5,5" Click="btnSettings_Click">Settings</Button>
+                <Label Name="lblDateTime" DockPanel.Dock="Right" FontWeight="Normal" FontSize="15" HorizontalAlignment="Right" Content="{Binding CurrentDateTime}"></Label>
+                <Label DockPanel.Dock="Right" FontWeight="SemiBold" FontSize="15" HorizontalAlignment="Right"></Label>
+            </DockPanel>
+            <Border BorderThickness="0,2,0,1" Margin="0,3,0,5">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="Gray"></SolidColorBrush>
+                </Border.BorderBrush>
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="15" Color="Gray" Direction="1" Opacity=".3"
+           RenderingBias="Quality" ShadowDepth="5" />
+                </Border.Effect>
+                <Separator></Separator>
+            </Border>
+        </StackPanel>
+        <Border Name="brdLeftSideBar" BorderThickness="0,0,1,0" Grid.Row="0" Grid.Column="0">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="0.5,1">
+                    <GradientStop Color="LightGray" Offset="0"/>
+                    <GradientStop Color="Gray" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <StackPanel Orientation="Horizontal">
+                <ScrollViewer Width="200" DockPanel.Dock="Left" PanningMode="VerticalOnly">
+                    <!--Left Navigation-->
+                    <StackPanel ScrollViewer.CanContentScroll="True">
+                        <!--<StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                            <TextBlock FontSize="15" FontWeight="Bold" Padding="3">Culture:</TextBlock>
+                            <ComboBox FontSize="15" Padding="5" Name="cmbCulture"
+                                    DisplayMemberPath="display_culture_name"
+                                    SelectedValuePath="culture_code" 
+                                      SelectedIndex="1" 
+                                      SelectionChanged="cmbCulture_SelectionChanged">
+                            </ComboBox>
+                        </StackPanel>
+                        <Separator></Separator>-->
+                        <TextBlock Padding="3" FontWeight="Bold" FontSize="15">Category:</TextBlock>
+                        <ListBox ScrollViewer.CanContentScroll="True" Name="lstCategories" FontSize="15" BorderBrush="Transparent" SelectedIndex="0" SelectionChanged="lstCategories_SelectionChanged">
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                    <Setter Property="Padding" Value="5" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Green"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Path=english_category_name}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+        <ScrollViewer Background="white" PanningMode="VerticalOnly">
+            <StackPanel ScrollViewer.CanContentScroll="True">
+                <Grid>
+                    <!--<Grid.Background>
+                        <SolidColorBrush Color="Navy"></SolidColorBrush>
+                    </Grid.Background>-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="0,0,0,0" Grid.Row="0" Grid.Column="0">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="0.5,1">
+                                <GradientStop Color="LightGray" Offset="0"/>
+                                <GradientStop Color="Gray" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <StackPanel>
+                            <!--Left side column-->
+                            <local:StoryUserControl Tag="1" x:Name="Story_Left_1"></local:StoryUserControl>
+                            <local:StoryUserControl Tag="2" x:Name="Story_Left_2"></local:StoryUserControl>
+                            <local:StoryUserControl Tag="15" x:Name="Story_Left_3"></local:StoryUserControl>
+                            <local:StoryUserControl Tag="16" x:Name="Story_Left_4"></local:StoryUserControl>
+                            <local:StoryUserControl Tag="19" x:Name="Story_Left_5"></local:StoryUserControl>
+                            <local:StoryUserControl Tag="20" x:Name="Story_Left_6"></local:StoryUserControl>
+                            <local:StoryUserControl Tag="21" x:Name="Story_Left_7"></local:StoryUserControl>
+                            <local:StoryUserControl Tag="22" x:Name="Story_Left_8"></local:StoryUserControl>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderThickness="0,0,0,0" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="0.5,1">
+                                <GradientStop Color="LightGray" Offset="0"/>
+                                <GradientStop Color="Gray" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <StackPanel Name="MainStory1Grid">
+                            <!--Main story1-->
+                            <local:StoryUserControl Tag="4" x:Name="Story_Main"></local:StoryUserControl>
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="White"></SolidColorBrush>
+                                </Grid.Background>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Border BorderThickness="0,0,0,0" Grid.Row="0" Grid.Column="0">
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="0.5,1">
+                                            <GradientStop Color="LightGray" Offset="0"/>
+                                            <GradientStop Color="Gray" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                    <StackPanel>
+                                        <!--Left column after main story-->
+                                        <local:StoryUserControl Tag="6" x:Name="Story_Main_Left_1"></local:StoryUserControl>
+                                        <local:StoryUserControl Tag="9" x:Name="Story_Main_Left_2"></local:StoryUserControl>
+                                        <local:StoryUserControl Tag="12" x:Name="Story_Main_Left_3"></local:StoryUserControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border BorderThickness="0,0,0,0" Grid.Row="0" Grid.Column="1">
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="0.5,1">
+                                            <GradientStop Color="LightGray" Offset="0"/>
+                                            <GradientStop Color="Gray" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                    <StackPanel>
+                                        <!--Middle column after main story-->
+                                        <local:StoryUserControl Tag="5" x:Name="Story_Middle_1"></local:StoryUserControl>
+                                        <local:StoryUserControl Tag="10" x:Name="Story_Middle_2"></local:StoryUserControl>
+                                        <local:StoryUserControl Tag="13" x:Name="Story_Middle_3"></local:StoryUserControl>
+                                    </StackPanel>
+                                </Border>
+                                <StackPanel Grid.Row="0" Grid.Column="2">
+                                    <!--Right column after main story-->
+                                    <local:StoryUserControl Tag="3" x:Name="Story_Main_Right_1"></local:StoryUserControl>
+                                    <local:StoryUserControl Tag="11" x:Name="Story_Main_Right_2"></local:StoryUserControl>
+                                    <local:StoryUserControl Tag="14" x:Name="Story_Main_Right_3"></local:StoryUserControl>
+                                </StackPanel>
+                            </Grid>
+                            <!--Main story2-->
+                            <local:StoryUserControl Tag="23" x:Name="Story_Main_x2"></local:StoryUserControl>
+                            <Grid>
+                                <Grid.Background>
+                                    <SolidColorBrush Color="White"></SolidColorBrush>
+                                </Grid.Background>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Border BorderThickness="0,0,0,0" Grid.Row="0" Grid.Column="0">
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="0.5,1">
+                                            <GradientStop Color="LightGray" Offset="0"/>
+                                            <GradientStop Color="Gray" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                    <StackPanel>
+                                        <!--Left column after main story-->
+                                        <local:StoryUserControl Tag="24" x:Name="Story_Main_Left_1_x2"></local:StoryUserControl>
+                                        <local:StoryUserControl Tag="25" x:Name="Story_Main_Left_2_x2"></local:StoryUserControl>
+                                        <local:StoryUserControl Tag="26" x:Name="Story_Main_Left_3_x2"></local:StoryUserControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <Border BorderThickness="0,0,0,0" Grid.Row="0" Grid.Column="1">
+                                    <Border.BorderBrush>
+                                        <LinearGradientBrush StartPoint="0,0.5" EndPoint="0.5,1">
+                                            <GradientStop Color="LightGray" Offset="0"/>
+                                            <GradientStop Color="Gray" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.BorderBrush>
+                                    <StackPanel>
+                                        <!--Middle column after main story-->
+                                        <local:StoryUserControl Tag="27" x:Name="Story_Middle_1_x2"></local:StoryUserControl>
+                                        <local:StoryUserControl Tag="28" x:Name="Story_Middle_2_x2"></local:StoryUserControl>
+                                        <local:StoryUserControl Tag="29" x:Name="Story_Middle_3_x2"></local:StoryUserControl>
+                                    </StackPanel>
+                                </Border>
+                                <StackPanel Grid.Row="0" Grid.Column="2">
+                                    <!--Right column after main story-->
+                                    <local:StoryUserControl Tag="30" x:Name="Story_Main_Right_1_x2"></local:StoryUserControl>
+                                    <local:StoryUserControl Tag="31" x:Name="Story_Main_Right_2_x2"></local:StoryUserControl>
+                                    <local:StoryUserControl Tag="32" x:Name="Story_Main_Right_3_x2"></local:StoryUserControl>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                    <StackPanel Grid.Row="0" Grid.Column="4">
+                        <!--Right side column-->
+                        <local:StoryUserControl Tag="7" x:Name="Story_Right_1"></local:StoryUserControl>
+                        <local:StoryUserControl Tag="8" x:Name="Story_Right_2"></local:StoryUserControl>
+                        <local:StoryUserControl Tag="17" x:Name="Story_Right_3"></local:StoryUserControl>
+                        <local:StoryUserControl Tag="18" x:Name="Story_Right_4"></local:StoryUserControl>
+                        <local:StoryUserControl Tag="33" x:Name="Story_Right_5"></local:StoryUserControl>
+                        <local:StoryUserControl Tag="34" x:Name="Story_Right_6"></local:StoryUserControl>
+                        <local:StoryUserControl Tag="35" x:Name="Story_Right_7"></local:StoryUserControl>
+                        <local:StoryUserControl Tag="36" x:Name="Story_Right_8"></local:StoryUserControl>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

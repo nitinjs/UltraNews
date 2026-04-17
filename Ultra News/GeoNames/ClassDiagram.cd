@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="data classes providing information delivered by the webservice">
+    <Position X="3.729" Y="7.625" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="BenjaminSchroeter.GeoNames.Geoname">
+    <Position X="0.5" Y="3.25" Width="2" />
+    <Members>
+      <Method Name="Geoname" Hidden="true" />
+      <Method Name="Init" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ICAiAAAAAEAAAAgogAAcAIQEAAAgAEBDEAAiAAAAAIA=</HashCode>
+      <FileName>Geoname.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BenjaminSchroeter.GeoNames.GeoNamesOrgWebservice">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <Members>
+      <Method Name="CreateGeonameList" Hidden="true" />
+      <Method Name="CreateWebClient" Hidden="true" />
+      <Method Name="CreateWikipediaArticleList" Hidden="true" />
+      <Method Name="FindNearbyWikipediaUrl" Hidden="true" />
+      <Field Name="webClient" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAQAAAAAAggABAAAAEAAQAgAAAAAAAASQgQAAAAAA=</HashCode>
+      <FileName>GeoNamesOrgWebservice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BenjaminSchroeter.GeoNames.WeatherObservation">
+    <Position X="2.75" Y="3.25" Width="1.75" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="WeatherObservation" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AGAAAAAAIEAAAAAAAQAeAAAQAFAAAAAAAAAChAAEAAA=</HashCode>
+      <FileName>WeatherObservation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BenjaminSchroeter.GeoNames.WikipediaArticle">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Members>
+      <Method Name="Init" Hidden="true" />
+      <Method Name="WikipediaArticle" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACCAAAAACEAAAEgAAAgIAAAAAAAAAABAAAACCAAAAAA=</HashCode>
+      <FileName>WikipediaArticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BenjaminSchroeter.GeoNames.GeoNamesDataStyle">
+    <Position X="4.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAEAAA=</HashCode>
+      <FileName>GeoNamesOrgWebservice.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BenjaminSchroeter.GeoNames.ElevationModel">
+    <Position X="4.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeoNamesOrgWebservice.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

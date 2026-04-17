@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Nitin.News.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Location" Type="System.String" Scope="User">
+      <Value Profile="(Default)">40.7142° N, 74.0064° W</Value>
+    </Setting>
+    <Setting Name="LocationName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LocationMode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">manual</Value>
+    </Setting>
+    <Setting Name="cmbCulture_SelectedIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
